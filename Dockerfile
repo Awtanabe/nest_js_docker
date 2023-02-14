@@ -1,4 +1,8 @@
-# FROM node バージョンを指定する
-FROM node:16-alpine3.15
-RUN npm i -g @nestjs/cli
-WORKDIR /api
+FROM nestjs/cli
+
+COPY package*.json ./
+
+WORKDIR /myapp
+
+# compose の commandで起動する
+# CMD ["npm", "run", "start"]
